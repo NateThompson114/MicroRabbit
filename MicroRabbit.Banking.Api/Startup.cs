@@ -31,9 +31,10 @@ namespace MicroRabbit.Banking.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BankingDbContext>(options =>
-                {
-                    options.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection"));
-                });
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection"));
+            });
+
             services.AddControllers();
 
             services.AddSwaggerGen(options =>
