@@ -30,6 +30,7 @@ namespace MicroRabbit.Infra.Bus
 
         public void Publish<T>(T @event) where T : Event
         {
+            // 4th BackingTransferToBus publishes to bus.
             var factory = new ConnectionFactory() {HostName = "localhost"};
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
